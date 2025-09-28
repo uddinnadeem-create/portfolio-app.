@@ -1,16 +1,16 @@
 
-# Live Portfolio App — v2.2
-Adds **Sector mapping** support and a **Sector Allocation** chart.
-Also includes all features from v2.1 (pre/after-hours toggle, futures panel).
+# Live Portfolio App — v2.3
+**Fix:** Reads config from Streamlit `st.secrets` (with env fallback) so your Options URL in Secrets works.
+Adds a small debug panel and formats the equities table.
 
-## Run
+## Deploy
 pip install -r requirements.txt
 streamlit run app.py
 
-## Environment variables (optional)
-- REFRESH_SECONDS=60
-- APP_TIMEZONE=Asia/Dubai
-- EQUITIES_CSV_URL=...
-- OPTIONS_CSV_URL=...
-- SECTORS_CSV_URL=...   # <--- new
-- DEFAULT_FUTURES="ES=F,NQ=F,CL=F,GC=F"
+## Secrets (TOML)
+EQUITIES_CSV_URL = "https://...output=csv"
+OPTIONS_CSV_URL  = "https://...output=csv"
+SECTORS_CSV_URL  = "https://...output=csv"
+REFRESH_SECONDS  = "60"
+APP_TIMEZONE     = "Asia/Dubai"
+DEFAULT_FUTURES  = "ES=F,NQ=F,CL=F,GC=F"
